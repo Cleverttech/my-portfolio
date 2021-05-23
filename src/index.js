@@ -10,7 +10,7 @@ const theme = createMuiTheme({
       main: "#f2eae1",
     },
     secondary: {
-      main: '#ba7e32',
+      main: '#ac7937',
     },
     action:{
      hover: "rgba(186,126,50,0.3)"
