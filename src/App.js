@@ -82,17 +82,17 @@ const useStyles = makeStyles((theme) => ({
 	avatarImg: {
 		width: "100%",
 	},
-	projectCard: {
+	projectCards: {
 		display: "flex",
 		justifyContent: "center",
-		paddingTop: "15%",
+    margin: "40px auto",
 	},
 }));
 
 function App() {
 	const theme = useTheme();
 	const classes = useStyles();
-	const [expanded, setExpanded] = React.useState(false);
+	const [expanded, setExpanded] = useState(false);
 
 	const handleExpandClick = () => {
 		setExpanded(!expanded);
@@ -156,13 +156,21 @@ function App() {
 		backgroundColor: "white",
 		minHeight: "100vh",
 	};
+  const contactSection = {
+    backgroundColor: "white",
+    minHeight: "100vh",
+  };
 	const projectsSection = {
 		backgroundColor: theme.palette.primary.main,
 		minHeight: "100vh",
+		width: "100vw",
+    margin:"auto",
 	};
-	const contactSection = {
-		backgroundColor: "white",
-		minHeight: "100vh",
+	const projectStyles = {
+    margin: "0px 20px",
+    flexWrap : "wrap",
+    flexDirection : "row",
+    display: "flex",
 	};
 
 	return (
@@ -223,11 +231,13 @@ function App() {
 					My Skills
 				</h1>
 			</Grid>
-			<Grid style={projectsSection} id="projects">
+			
+      <Grid style={projectsSection} id="projects">
 				<h1 className={classes.heading} color={theme.palette.secondary.main}>
 					Projects
 				</h1>
-				<Grid className={classes.projectCard}>
+        <div style={projectStyles}>
+        <Grid className={classes.projectCards}>
 					<Paper elevation={20}>
 						<Card className={classes.root}>
 							<CardHeader
@@ -239,7 +249,7 @@ function App() {
 								title="Topoli Arts"
 								subheader="Delivered on: May 21, 2021"
 							/>
-							<CardMedia className={classes.media} image="../assets/apple frame.png" title="Paella dish" />
+							<CardMedia className={classes.media} image="../assets/topoli-frame.png" title="Paella dish" />
 							<CardContent>
 								<Typography variant="body2" color="textSecondary" component="p">
 									This is a web application with some content management features where professional artists as mentors get to offer mentorships courses,
@@ -281,7 +291,7 @@ function App() {
 										<ul>
 											<li>
 												{" "}
-												Three different user types with different functionalities (owner, mentor, student) <br></br>
+												Three different user types with different functionalities and profile pages (owner, mentor, student) <br></br>
 											</li>
 											<li>
 												{" "}
@@ -302,7 +312,150 @@ function App() {
 						</Card>
 					</Paper>
 				</Grid>
-			</Grid>
+				<Grid className={classes.projectCards}>
+					<Paper elevation={20}>
+						<Card className={classes.root}>
+							<CardHeader
+								avatar={
+									<Avatar aria-label="full-stack app" className={classes.avatar}>
+										<img className={classes.avatarImg} src="../assets/logo.png"></img>
+									</Avatar>
+								}
+								title="Clever Move"
+								subheader="Delivered on: April 30, 2021"
+							/>
+							<CardMedia className={classes.media} image="../assets/clevermove-frame.png" title="topoli arts" />
+							<CardContent>
+								<Typography variant="body2" color="textSecondary" component="p">
+									This is a web application of a Moving company with the functionalities of customers to be able to book their moving schedules for the admin user to have an overview of all booked schedules and be able to accept or decline.
+								</Typography>
+							</CardContent>
+							<Link href="https://clevermove.herokuapp.com/">
+								<Button variant="contained" color="secondary">
+									Checkout Clever-Move here
+								</Button>
+							</Link>
+							<CardActions disableSpacing>
+								<Typography variant="body2" color="black" component="p">
+									Read more about this project
+								</Typography>
+								<IconButton
+									className={clsx(classes.expand, {
+										[classes.expandOpen]: expanded,
+									})}
+									onClick={handleExpandClick}
+									aria-expanded={expanded}
+									aria-label="show more"
+								>
+									<ExpandMoreIcon />
+								</IconButton>
+							</CardActions>
+							<Collapse in={expanded} timeout="auto" unmountOnExit>
+								<CardContent>
+									<Typography variant="body2" color="secondary" paragraph>
+										Technologies used:
+									</Typography>
+									<Typography variant="body2" color="black" paragraph>
+										Handlebars, Bootstrap, NodeJS, ExpressJS, CSS, HTML
+									</Typography>
+									<Typography variant="body2" color="secondary" paragraph>
+										Some cool features:
+									</Typography>
+									<Typography variant="body2" color="black" paragraph>
+										<ul>
+											<li>
+												{" "}
+												Two different user types with different functionalities and profile pages (admin, customer) <br></br>
+											</li>
+											<li>
+												{" "}
+												Customers can book schedules via a form <br></br>
+											</li>
+									
+											<li>The Admin user has an overview of all schedules and is able to accept or decline a booking</li>
+										</ul>
+									</Typography>
+									<Typography variant="body2" color="black" paragraph>
+										Together with my project partner, we planned, designed and hardcoded the various features of this useful application. The coding experience amazing.							
+									</Typography>
+								</CardContent>
+							</Collapse>
+						</Card>
+					</Paper>
+				</Grid>
+				<Grid className={classes.projectCards}>
+					<Paper elevation={20}>
+						<Card className={classes.root}>
+							<CardHeader
+								avatar={
+									<Avatar aria-label="game" className={classes.avatar}>
+										<img className={classes.avatarImg} src="../assets/mother2.png"></img>
+									</Avatar>
+								}
+								title="Dragon Slay"
+								subheader="Delivered on: April 9, 2021"
+							/>
+							<CardMedia className={classes.media} image="../assets/dragonslay-frame.png" title="Dragon slay" />
+							<CardContent>
+								<Typography variant="body2" color="textSecondary" component="p">
+                A very addictive game with increasing difficulty.Dragon slay is about a Mother Dragon trying to avoid Obstacles in her way to save her baby dragon who appears only after a minimum score of 5.
+								</Typography>
+							</CardContent>
+							<Link href=" https://cleverttech.github.io/Dragon-slay/ ">
+								<Button variant="contained" color="secondary">
+									Checkout Dragon-Slay here
+								</Button>
+							</Link>
+							<CardActions disableSpacing>
+								<Typography variant="body2" color="black" component="p">
+									Read more about this project
+								</Typography>
+								<IconButton
+									className={clsx(classes.expand, {
+										[classes.expandOpen]: expanded,
+									})}
+									onClick={handleExpandClick}
+									aria-expanded={expanded}
+									aria-label="show more"
+								>
+									<ExpandMoreIcon />
+								</IconButton>
+							</CardActions>
+							<Collapse in={expanded} timeout="auto" unmountOnExit>
+								<CardContent>
+									<Typography variant="body2" color="secondary" paragraph>
+										Technologies used:
+									</Typography>
+									<Typography variant="body2" color="black" paragraph>
+										Handlebars, Bootstrap, NodeJS, ExpressJS, CSS, HTML
+									</Typography>
+									<Typography variant="body2" color="secondary" paragraph>
+										Some cool features:
+									</Typography>
+									<Typography variant="body2" color="black" paragraph>
+										<ul>
+											<li>
+												{" "}
+												Two different user types with different functionalities and profile pages (admin, customer) <br></br>
+											</li>
+											<li>
+												{" "}
+												Customers can book schedules via a form <br></br>
+											</li>
+									
+											<li>The Admin user has an overview of all schedules and is able to accept or decline a booking</li>
+										</ul>
+									</Typography>
+									<Typography variant="body2" color="black" paragraph>
+										Together with my project partner, we planned, designed and hardcoded the various features of this useful application. The coding experience amazing.							
+									</Typography>
+								</CardContent>
+							</Collapse>
+						</Card>
+					</Paper>
+				</Grid>			
+        </div>
+		</Grid>
 			<Grid style={contactSection} id="contact">
 				<h1 className={classes.heading} color={theme.palette.secondary.main}>
 					contact
