@@ -23,7 +23,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { useTheme, makeStyles } from "@material-ui/core/styles";
 import React, { useState } from "react";
 import MenuIcon from "@material-ui/icons/Menu";
-
+import FavoriteIcon from '@material-ui/icons/Favorite';
 const useStyles = makeStyles((theme) => ({
 	root: {
 		maxWidth: 345,
@@ -87,6 +87,13 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent: "center",
     margin: "40px auto",
 	},
+  contactIcons:{
+    width: "2.6em",
+    margin:"40px"
+  },
+  seeMore:{
+   marginLeft: "20%"
+  }
 }));
 
 function App() {
@@ -144,24 +151,18 @@ function App() {
 		</Menu>
 	);
 
+	
 	const heroSection = {
 		backgroundColor: "white",
 		minHeight: "100vh",
 	};
-	const aboutSection = {
-		backgroundColor: theme.palette.primary.main,
-		minHeight: "100vh",
-	};
 	const skillsSection = {
-		backgroundColor: "white",
+		backgroundColor: theme.palette.primary.main,
 		minHeight: "100vh",
 	};
-  const contactSection = {
-    backgroundColor: "white",
-    minHeight: "100vh",
-  };
+
 	const projectsSection = {
-		backgroundColor: theme.palette.primary.main,
+		backgroundColor: "white",
 		minHeight: "100vh",
 		width: "100vw",
     margin:"auto",
@@ -172,7 +173,20 @@ function App() {
     flexDirection : "row",
     display: "flex",
 	};
-
+  const contactSection = {
+    backgroundColor: theme.palette.primary.main,
+    minHeight: "30vh",
+  };
+  const skillText = {
+	color:"white",
+	 width:"70%", 
+	 margin:" auto",
+	 marginTop:"150px",
+	 fontSize:"1.3em",
+	 fontweight:"light",
+	 color:"#d8d0c7",
+	 lineHeight:"2"
+  };
 	return (
 		<div className="App">
 			<Grid>
@@ -190,7 +204,7 @@ function App() {
 							<div className={classes.sectionDesktop}>
 								<MenuItem>
 									<a className={classes.link} href="#about">
-										About me
+										
 									</a>
 								</MenuItem>
 								<MenuItem>
@@ -220,16 +234,30 @@ function App() {
 					{renderMobileMenu}
 				</div>
 			</Grid>
-			<Grid style={heroSection} id="hero"></Grid>
-			<Grid style={aboutSection} id="about">
+			<Grid style={heroSection} id="about">
 				<h1 className={classes.heading} color={theme.palette.secondary.main}>
-					About me
+					Clever Tedeku
 				</h1>
+				<Typography variant="h5" color={theme.palette.secondary.main} component="h5" >
+					Full-stack Web Developer
+				</Typography>
+								
 			</Grid>
 			<Grid style={skillsSection} id="skills">
 				<h1 className={classes.heading} color={theme.palette.secondary.main}>
 					My Skills
 				</h1>
+				<Typography variant="body1" style={skillText} component="p">
+			
+                  My strongholds are Html/css/Javascript, ReactJS, NodeJS, ES6, JSON, APIs, Bootstrap, ExpressJS, Googgle Material UI
+                  I am proficient in the usage of JS libraries such as JQuery
+                  I welcome new daily challenges in programming.
+                  I am still learning and open to acquiring new skills.
+             
+				  I am a quick learner, team-oriented and quickly adapt to fast-paced working environments. My work experience have been in
+                 both personal projects and under the umbrella of a publishing firm where I got the opportunity to work with an amazing team in executing a (<a href="https://weihnachten.aerzteverlag.de" target="_blank"><b> Christmas wishes page@Aertzeverlag</b></a>) which i independetly coded from scratch plus templating/Typo3 dynamic programming for the relaunch of an existing company client's Website <a href="https://www.operation-karriere.de/kongresse/die-kongressreihe.html" target="_blank"><b>Entire "Kongresse" menu content</b></a>.
+               
+			</Typography>
 			</Grid>
 			
       <Grid style={projectsSection} id="projects">
@@ -249,7 +277,7 @@ function App() {
 								title="Topoli Arts"
 								subheader="Delivered on: May 21, 2021"
 							/>
-							<CardMedia className={classes.media} image="../assets/topoli-frame.png" title="Paella dish" />
+							<CardMedia className={classes.media} image="../assets/topoli-frame.png" title="topoli arts" />
 							<CardContent>
 								<Typography variant="body2" color="textSecondary" component="p">
 									This is a web application with some content management features where professional artists as mentors get to offer mentorships courses,
@@ -262,7 +290,7 @@ function App() {
 								</Button>
 							</Link>
 							<CardActions disableSpacing>
-								<Typography variant="body2" color="black" component="p">
+								<Typography variant="body2" color="black" component="p" className={classes.seeMore}>
 									Read more about this project
 								</Typography>
 								<IconButton
@@ -324,19 +352,19 @@ function App() {
 								title="Clever Move"
 								subheader="Delivered on: April 30, 2021"
 							/>
-							<CardMedia className={classes.media} image="../assets/clevermove-frame.png" title="topoli arts" />
+							<CardMedia className={classes.media} image="../assets/clevermove-frame.png" title="Clever move" />
 							<CardContent>
 								<Typography variant="body2" color="textSecondary" component="p">
 									This is a web application of a Moving company with the functionalities of customers to be able to book their moving schedules for the admin user to have an overview of all booked schedules and be able to accept or decline.
 								</Typography>
 							</CardContent>
-							<Link href="https://clevermove.herokuapp.com/">
+							<Link href="https://clevermove.herokuapp.com/" >
 								<Button variant="contained" color="secondary">
 									Checkout Clever-Move here
 								</Button>
 							</Link>
 							<CardActions disableSpacing>
-								<Typography variant="body2" color="black" component="p">
+								<Typography variant="body2" color="black" component="p" className={classes.seeMore}>
 									Read more about this project
 								</Typography>
 								<IconButton
@@ -398,16 +426,16 @@ function App() {
 							<CardMedia className={classes.media} image="../assets/dragonslay-frame.png" title="Dragon slay" />
 							<CardContent>
 								<Typography variant="body2" color="textSecondary" component="p">
-                A very addictive game with increasing difficulty.Dragon slay is about a Mother Dragon trying to avoid Obstacles in her way to save her baby dragon who appears only after a minimum score of 5.
+                        A very addictive game with increasing difficulty.Dragon slay is about a Mother Dragon trying to avoid Obstacles in her way to save her baby dragon who appears only after a minimum score of 5.
 								</Typography>
 							</CardContent>
-							<Link href=" https://cleverttech.github.io/Dragon-slay/ ">
+							<Link href=" https://cleverttech.github.io/Dragon-slay/" target="_blank">
 								<Button variant="contained" color="secondary">
 									Checkout Dragon-Slay here
 								</Button>
 							</Link>
 							<CardActions disableSpacing>
-								<Typography variant="body2" color="black" component="p">
+								<Typography variant="body2" color="black" component="p" className={classes.seeMore}>
 									Read more about this project
 								</Typography>
 								<IconButton
@@ -458,8 +486,23 @@ function App() {
 		</Grid>
 			<Grid style={contactSection} id="contact">
 				<h1 className={classes.heading} color={theme.palette.secondary.main}>
-					contact
+					Contact me here
 				</h1>
+        <Grid>
+          <Link href="https://www.instagram.com/clever_ttech/ ">
+             <img className={classes.contactIcons} src="../assets/instagram.svg"></img>
+					</Link>
+					
+          <Link href="https://www.linkedin.com/in/clever-tedeku-84505a127/?senderId=clever-tedeku-84505a127 ">
+          <img className={classes.contactIcons} src="../assets/linkedin.svg"></img>
+					</Link>
+					
+          <Link href="https://twitter.com/TedekuClever">	
+						<img className={classes.contactIcons} src="../assets/twitter.svg"></img>
+					</Link>
+								
+        </Grid>
+            <small style={{color:"#ac7937", marginTop:"20px"}}>Made with <span><FavoriteIcon  style={{fontSize:"13px"}}/></span> by Clever</small>
 			</Grid>
 		</div>
 	);

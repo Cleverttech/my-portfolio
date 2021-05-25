@@ -7,13 +7,13 @@ import { createMuiTheme ,ThemeProvider} from '@material-ui/core/styles';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#f2eae1",
+      main: "#22272a",
     },
     secondary: {
       main: '#ac7937',
     },
     action:{
-     hover: "rgba(186,126,50,0.3)"
+     hover: "rgba(172,121,55,0.3)"
    }
    
   },
