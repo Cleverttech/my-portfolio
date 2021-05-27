@@ -26,7 +26,7 @@ const theme = createMuiTheme({
       'sans-serif'
     ].join(','),
     h6:{
-      fontWeight: "200"
+      fontWeight: "100"
     }
   }
   
@@ -40,8 +40,6 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-
 
 
 

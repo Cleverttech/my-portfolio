@@ -25,7 +25,14 @@ const useStyles = makeStyles((theme) => ({
 	root: {
 		maxWidth: 345,
 	},
-
+   link:{
+	   color:"white",
+	   textDecoration:"none",
+   },
+   linkMobile:{
+	color:"#252a2d",
+	textDecoration:"none",
+   },
 	grow: {
 		flexGrow: 1,
 	},
@@ -122,17 +129,17 @@ function App() {
 			onClose={handleMobileMenuClose}
 		>
 			<MenuItem onClick={handleMobileMenuClose}>
-				<a className={classes.link} href="#skills">
+				<a className={classes.linkMobile} href="#skills">
 					Skills
 				</a>
 			</MenuItem>
 			<MenuItem onClick={handleMobileMenuClose}>
-				<a className={classes.link} href="#projects">
+				<a className={classes.linkMobile} href="#projects">
 					Projects
 				</a>
 			</MenuItem>
 			<MenuItem onClick={handleMobileMenuClose}>
-				<a className={classes.link} href="#contact">
+				<a className={classes.linkMobile} href="#contact">
 					Contact
 				</a>
 			</MenuItem>
@@ -199,19 +206,19 @@ function App() {
 							<div className={classes.sectionDesktop}>
 					
 								<MenuItem>
-									<a className={classes.link} href="#skills">
+									<Link className={classes.link} href="#skills">
 										Skills
-									</a>
+									</Link>
 								</MenuItem>
 								<MenuItem>
-									<a className={classes.link} href="#projects">
+									<Link className={classes.link} href="#projects">
 										Projects
-									</a>
+									</Link>
 								</MenuItem>
 								<MenuItem>
-									<a className={classes.link} href="#contact">
+									<Link className={classes.link} href="#contact">
 										Contact
-									</a>
+									</Link>
 								</MenuItem>
 							</div>
 
@@ -301,7 +308,7 @@ function App() {
 								<CardHeader
 									avatar={
 										<Avatar aria-label="recipe" className={classes.avatar}>
-											<img className={classes.avatarImg} src="../assets/Topoli_Master_black.png"></img>
+											<img className={classes.avatarImg} src="../assets/topoli-logo.png"></img>
 										</Avatar>
 									}
 									title="Topoli Arts"
