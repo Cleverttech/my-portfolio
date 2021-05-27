@@ -13,12 +13,9 @@ import {
 	Card,
 	CardHeader,
 	CardContent,
-	CardActions,
 	CardMedia,
 	Button,
 } from "@material-ui/core";
-import clsx from "clsx";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { useTheme, makeStyles } from "@material-ui/core/styles";
 import React, { useState } from "react";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -69,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: "white",
 	},
 	large: {
-		width: "80%",
+		width: "70%",
 		height: "auto",
 		margin: "auto",
 	},
@@ -157,13 +154,22 @@ function App() {
 		display: "flex",
 		flexDirection: "column",
 		alignItems: "center",
+		paddingBottom:"70px",
 	};
-
+	const skillText = {
+		color: "white",
+		width: "85%",
+		margin:"auto",
+		fontSize: "1.2em",
+		lineHeight: "2",
+		fontWeight: 200,
+	};
 	const projectsSection = {
 		backgroundColor: "white",
 		minHeight: "100vh",
 		width: "100vw",
 		margin: "auto",
+		paddingBottom:"70px",
 	};
 	const projectStyles = {
 		margin: "0px 20px",
@@ -175,15 +181,7 @@ function App() {
 		backgroundColor: theme.palette.primary.main,
 		minHeight: "30vh",
 	};
-	const skillText = {
-		color: "white",
-		width: "70%",
-		padding: "30px",
-		justifyContent: "center",
-		fontSize: "1.2em",
-		lineHeight: "2",
-		fontWeight: 200,
-	};
+	
 
 
 	return (
