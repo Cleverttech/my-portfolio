@@ -25,6 +25,9 @@ const theme = createMuiTheme({
       'Arial',
       'sans-serif'
     ].join(','),
+    h6:{
+      fontWeight: "200"
+    }
   }
   
 });

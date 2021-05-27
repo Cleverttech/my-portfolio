@@ -16,6 +16,7 @@ import {
 	CardMedia,
 	Button,
 } from "@material-ui/core";
+import Typist from 'react-typist';
 import { useTheme, makeStyles } from "@material-ui/core/styles";
 import React, { useState } from "react";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -24,11 +25,7 @@ const useStyles = makeStyles((theme) => ({
 	root: {
 		maxWidth: 345,
 	},
-	link: {
-		textDecoration: "none",
-		color: "inherit",
-		paddingLeft: "40px",
-	},
+
 	grow: {
 		flexGrow: 1,
 	},
@@ -39,6 +36,10 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.up("sm")]: {
 			display: "block",
 		},
+		textDecoration: "none",
+		color: "inherit",
+		paddingLeft: "40px",
+		fontWeight: "light",
 	},
 	sectionDesktop: {
 		display: "none",
@@ -145,9 +146,7 @@ function App() {
 		alignItems: "center",
 		justifyContent: "center",
 	};
-	const innerHero = {
-		transitionTimingFunction: "cubic-bezier(.25, .1, .25, 1)",
-	};
+
 	const skillsSection = {
 		backgroundColor: theme.palette.primary.main,
 		minHeight: "100vh",
@@ -180,10 +179,9 @@ function App() {
 	const contactSection = {
 		backgroundColor: theme.palette.primary.main,
 		minHeight: "30vh",
+	
 	};
 	
-
-
 	return (
 		<div className="App">
 			<Grid>
@@ -191,10 +189,10 @@ function App() {
 					<AppBar position="static">
 						<Toolbar>
 							<Typography className={classes.title} variant="h6">
-								<a className={classes.link} href="#hero" color="inherit">
-									<img style={{ width: "38px", position: "absolute", top: "16px", left: "15px",fontWeight: 200, }} src="../assets/Logo_Master_hell.png" alt="logo" />
+
+									<img style={{ width: "38px", position: "absolute", top: "16px", left: "15px" }} src="../assets/Logo_Master_hell.png" alt="logo" />
 									Cleverttech
-								</a>
+					
 							</Typography>
 
 							<div className={classes.grow} />
@@ -228,18 +226,30 @@ function App() {
 				</div>
 			</Grid>
 			<Grid style={heroSection} id="about">
-				<Grid style={innerHero}>
+				<Grid >
 					<div className={classes.root}>
-						<Avatar alt="Remy Sharp" src="../assets/clever.png" className={classes.large} />
+						<Avatar alt="clever Img" src="../assets/clever.png" className={classes.large} />
 					</div>
-					<h1 className={classes.heading} color={theme.palette.secondary.main}>
-						Clever Tedeku
-					</h1>
-					<Typography variant="h5" color={theme.palette.secondary.main} component="h5">
-						Full-stack Web Developer
+					<Typist>
+					<Typography variant="h5" className={classes.heading} color={theme.palette.secondary.main}>
+						My name is Clever Tedeku
 					</Typography>
+			    	<Typist.Delay ms={400} />
+				   <br />
+			       	<Typography variant="h5" color={theme.palette.secondary.main} >
+						Fullstack JavaScript Developer
+					</Typography>
+					<Typography variant="caption" color={theme.palette.secondary.main} >
+						"Today I choose to be better than I was yesterday"  <br />
+						 _my daily motivation
+				  </Typography>
+				  </Typist>
 				</Grid>
 			</Grid>
+			<Grid>
+		
+				</Grid>
+		 
 			<Grid style={skillsSection} id="skills">
 				<h1 className={classes.heading} color={theme.palette.secondary.main}>
 					My Skills
