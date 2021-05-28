@@ -262,7 +262,7 @@ function App() {
 					My Skills
 				</h1>
 				<p style={skillText}>
-					Experience are in the stack:
+					My range of expertise are in the stack:
 					<Grid container spacing={3}>
 						<Grid item xs={12} lg={6} md={6}>
 							<ul>
@@ -307,8 +307,8 @@ function App() {
 							<Card className={classes.root}>
 								<CardHeader
 									avatar={
-										<Avatar aria-label="recipe" className={classes.avatar}>
-											<img className={classes.avatarImg} src="../assets/topoli-logo.png"></img>
+										<Avatar aria-label="topoli" className={classes.avatar}>
+											<img className={classes.avatarImg} src="../assets/topoli-logo.png" alt="topoliarts"></img>
 										</Avatar>
 									}
 									title="Topoli Arts"
@@ -345,7 +345,7 @@ function App() {
 								<CardHeader
 									avatar={
 										<Avatar aria-label="full-stack app" className={classes.avatar}>
-											<img className={classes.avatarImg} src="../assets/logo.png"></img>
+											<img className={classes.avatarImg} src="../assets/logo.png" alt="logo"></img>
 										</Avatar>
 									}
 									title="Clever Move"
@@ -382,7 +382,7 @@ function App() {
 								<CardHeader
 									avatar={
 										<Avatar aria-label="game" className={classes.avatar}>
-											<img className={classes.avatarImg} src="../assets/mother2.png"></img>
+											<img className={classes.avatarImg} src="../assets/mother2.png" alt="game"></img>
 										</Avatar>
 									}
 									title="Dragon Slay"
@@ -421,15 +421,15 @@ function App() {
 				</h1>
 				<Grid>
 					<Link href="https://www.instagram.com/clever_ttech/ ">
-						<img className={classes.contactIcons} src="../assets/instagram.png"></img>
+						<img className={classes.contactIcons} src="../assets/instagram.png" alt="instagram"></img>
 					</Link>
 
 					<Link href="https://www.linkedin.com/in/clever-tedeku-84505a127/?senderId=clever-tedeku-84505a127 ">
-						<img className={classes.contactIcons} src="../assets/linkedin.png"></img>
+						<img className={classes.contactIcons} src="../assets/linkedin.png" alt="linkedin"></img>
 					</Link>
 
 					<Link href="https://twitter.com/TedekuClever">
-						<img className={classes.contactIcons} src="../assets/twitter.png"></img>
+						<img className={classes.contactIcons} src="../assets/twitter.png" alt="twitter"></img>
 					</Link>
 				</Grid>
 				<small style={{ color: "#ac7937", marginTop: "20px" }}>
