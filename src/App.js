@@ -253,14 +253,16 @@ function App() {
 				  </Typist>
 				</Grid>
 			</Grid>
-			<Grid>
 		
-				</Grid>
-		 
 			<Grid style={skillsSection} id="skills">
 				<h1 className={classes.heading} color={theme.palette.secondary.main}>
-					My Skills
+					About me and my skills
 				</h1>
+				<p style={skillText}>
+                    My name is Clever and yes that's my real name :). I am usually considered by most people to be , sympathetic,
+					eager to learn and work with people from diverse cultures and backgrounds.
+					 The fun facts about me are, I love to cook and listen to trap music.
+				</p>
 				<p style={skillText}>
 					My range of expertise are in the stack:
 					<Grid container spacing={3}>
@@ -294,7 +296,7 @@ function App() {
 					<Link className={classes.highlight} href="https://www.operation-karriere.de/kongresse/die-kongressreihe.html" target="_blank">
 						Entire "Kongresse" menu content
 					</Link>
-					.
+					
 				</p>
 			</Grid>
 			<Grid style={projectsSection} id="projects">
@@ -441,7 +443,8 @@ function App() {
 				</small>
 			</Grid>
 		</div>
-	);
+	 )
 }
+
 
 export default App;
