@@ -404,7 +404,7 @@ function App() {
 
 								<CardContent>
 									<Typography variant="body2" color="textSecondary" paragraph>
-										Handlebars, Bootstrap, NodeJS, ExpressJS, CSS, HTML
+										JavaScript, CSS, HTML5 Canvas
 									</Typography>
 									<Link href=" https://cleverttech.github.io/Dragon-slay/" target="_blank">
 										<Button variant="contained" color="secondary">
