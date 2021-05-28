@@ -259,8 +259,8 @@ function App() {
 					About me and my skills
 				</h1>
 				<p style={skillText}>
-                    My name is Clever and yes that's my real name :). I am usually considered by most people to be , sympathetic,
-					eager to learn and work with people from diverse cultures and backgrounds.
+                    My name is Clever and yes that's my real name :). I am usually considered by most people to be personable, sympathetic,
+					eager to learn and work really well with people from diverse cultures and backgrounds.
 					 The fun facts about me are, I love to cook and listen to trap music.
 				</p>
 				<p style={skillText}>
