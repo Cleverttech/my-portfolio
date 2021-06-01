@@ -320,7 +320,7 @@ function App() {
 								<CardContent>
 									<Typography variant="body2" color="textSecondary" component="p">
 										This is a web application with some content management features where professional artists as mentors get to offer mentorships courses,
-										interact with students and also wheere students get to interact with each other.{" "}
+										interact with students and also where students get to interact with each other.{" "}
 									</Typography>
 								</CardContent>
 
