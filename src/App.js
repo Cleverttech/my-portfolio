@@ -428,7 +428,7 @@ function App() {
 						<img className={classes.contactIcons} src="../assets/linkedin.png" alt="linkedin" loading="lazy"></img>
 					</Link>
 					<Link href="https://github.com/Cleverttech" target="_blank" rel="noreferrer">
-						<img className={classes.contactIcons} src="../assets/github.png" alt="github" loading="lazy"></img>
+						<img className={classes.contactIcons} src="../assets/github.jpg" alt="github" loading="lazy"></img>
 					</Link>
 					<Link href="mailto:clevertedeku@gmail.com" target="_blank" rel="noreferrer">
 						<img className={classes.contactIcons} src="../assets/gmail.png" alt="gmail" loading="lazy"></img>
