@@ -320,7 +320,7 @@ function App() {
 								<CardContent>
 									<Typography variant="body2" color="textSecondary" component="p">
 										This is a web application with some content management features where professional artists as mentors get to offer mentorships courses,
-										interact with students and also wheere students get to interact with each other.{" "}
+										interact with students and also where students get to interact with each other.{" "}
 									</Typography>
 								</CardContent>
 
@@ -422,15 +422,21 @@ function App() {
 					Contact me here
 				</h1>
 				<Grid>
-					<Link href="https://www.instagram.com/clever_ttech/ ">
-						<img className={classes.contactIcons} src="../assets/instagram.png" alt="instagram"></img>
-					</Link>
+				
 
-					<Link href="https://www.linkedin.com/in/clever-tedeku-84505a127/?senderId=clever-tedeku-84505a127 ">
+					<Link href="https://www.linkedin.com/in/clever-tedeku-84505a127/?senderId=clever-tedeku-84505a127 " target="_blank" rel="noreferrer">
 						<img className={classes.contactIcons} src="../assets/linkedin.png" alt="linkedin"></img>
 					</Link>
-
-					<Link href="https://twitter.com/TedekuClever">
+					<Link href="https://github.com/Cleverttech" target="_blank" rel="noreferrer">
+						<img className={classes.contactIcons} src="../assets/twitter.png" alt="github"></img>
+					</Link>
+					<Link href="mailto:clevertedeku@gmail.com" target="_blank" rel="noreferrer">
+						<img className={classes.contactIcons} src="../assets/twitter.png" alt="gmail"></img>
+					</Link>
+					<Link href="https://www.instagram.com/clever_ttech/ " target="_blank" rel="noreferrer">
+						<img className={classes.contactIcons} src="../assets/instagram.png" alt="instagram"></img>
+					</Link>
+					<Link href="https://twitter.com/TedekuClever" target="_blank" rel="noreferrer">
 						<img className={classes.contactIcons} src="../assets/twitter.png" alt="twitter"></img>
 					</Link>
 				</Grid>
