@@ -394,7 +394,7 @@ function App() {
 								<CardContent>
 									<Typography variant="body2" color="textSecondary" component="p">
 										A very addictive game with increasing difficulty.Dragon slay is about a Mother Dragon trying to avoid Obstacles in her way to save her baby
-										dragon who appears only after a minimum score of 5.
+										dragon who appears only after a minimum score of 5. (Use keyboard keys only)
 									</Typography>
 								</CardContent>
 
