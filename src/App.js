@@ -310,7 +310,7 @@ function App() {
 								<CardHeader
 									avatar={
 										<Avatar aria-label="topoli" className={classes.avatar}>
-											<img className={classes.avatarImg} src="../assets/topoli-logo.png" alt="topoliarts"></img>
+											<img className={classes.avatarImg} src="../assets/topoli-logo.png" alt="topoliarts" loading="lazy"></img>
 										</Avatar>
 									}
 									title="Topoli Arts"
@@ -384,7 +384,7 @@ function App() {
 								<CardHeader
 									avatar={
 										<Avatar aria-label="game" className={classes.avatar}>
-											<img className={classes.avatarImg} src="../assets/mother2.png" alt="game"></img>
+											<img className={classes.avatarImg} src="../assets/mother2.png" alt="game" loading="lazy"></img>
 										</Avatar>
 									}
 									title="Dragon Slay"
@@ -404,7 +404,7 @@ function App() {
 
 								<CardContent>
 									<Typography variant="body2" color="textSecondary" paragraph>
-										JavaScript, CSS, HTML5 Canvas
+										JavaScript, DOM manipulation, CSS3, HTML5 Canvas
 									</Typography>
 									<Link href=" https://cleverttech.github.io/Dragon-slay/" target="_blank">
 										<Button variant="contained" color="secondary">
@@ -425,19 +425,19 @@ function App() {
 				
 
 					<Link href="https://www.linkedin.com/in/clever-tedeku-84505a127/?senderId=clever-tedeku-84505a127 " target="_blank" rel="noreferrer">
-						<img className={classes.contactIcons} src="../assets/linkedin.png" alt="linkedin"></img>
+						<img className={classes.contactIcons} src="../assets/linkedin.png" alt="linkedin" loading="lazy"></img>
 					</Link>
 					<Link href="https://github.com/Cleverttech" target="_blank" rel="noreferrer">
-						<img className={classes.contactIcons} src="../assets/twitter.png" alt="github"></img>
+						<img className={classes.contactIcons} src="../assets/github.png" alt="github" loading="lazy"></img>
 					</Link>
 					<Link href="mailto:clevertedeku@gmail.com" target="_blank" rel="noreferrer">
-						<img className={classes.contactIcons} src="../assets/twitter.png" alt="gmail"></img>
+						<img className={classes.contactIcons} src="../assets/gmail.png" alt="gmail" loading="lazy"></img>
 					</Link>
 					<Link href="https://www.instagram.com/clever_ttech/ " target="_blank" rel="noreferrer">
-						<img className={classes.contactIcons} src="../assets/instagram.png" alt="instagram"></img>
+						<img className={classes.contactIcons} src="../assets/instagram.png" alt="instagram" loading="lazy"></img>
 					</Link>
 					<Link href="https://twitter.com/TedekuClever" target="_blank" rel="noreferrer">
-						<img className={classes.contactIcons} src="../assets/twitter.png" alt="twitter"></img>
+						<img className={classes.contactIcons} src="../assets/twitter.png" alt="twitter" loading="lazy"></img>
 					</Link>
 				</Grid>
 				<small style={{ color: "#ac7937", marginTop: "20px" }}>
