@@ -90,7 +90,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	contactIcons: {
 		width: "2.6em",
-		margin: "40px",
+		margin: "20px",
 	},
 	seeMore: {
 		margin: "auto",
