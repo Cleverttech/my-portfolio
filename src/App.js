@@ -25,14 +25,14 @@ const useStyles = makeStyles((theme) => ({
 	root: {
 		maxWidth: 345,
 	},
-   link:{
+        link:{
 	   color:"white",
 	   textDecoration:"none",
-   },
-   linkMobile:{
-	color:"#252a2d",
-	textDecoration:"none",
-   },
+        },
+           linkMobile:{
+	   color:"#252a2d",
+	   textDecoration:"none",
+        },
 	grow: {
 		flexGrow: 1,
 	},
@@ -241,15 +241,15 @@ function App() {
 					<Typography variant="h5" className={classes.heading} color={theme.palette.secondary.main}>
 						My name is Clever Tedeku
 					</Typography>
-			    	<Typist.Delay ms={400} />
-				   <br />
-			       	<Typography variant="h5" color={theme.palette.secondary.main} >
+			    	<Typist.Delay ms={500} />
+				        <br />
+			          	<Typography variant="h5" color={theme.palette.secondary.main} >
 						Fullstack JavaScript Developer
 					</Typography>
 					<Typography variant="caption" color={theme.palette.secondary.main} >
 						"Today I choose to be better than I was yesterday"  <br />
 						 _my daily motivation
-				  </Typography>
+				       </Typography>
 				  </Typist>
 				</Grid>
 			</Grid>
