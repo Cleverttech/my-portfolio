@@ -244,7 +244,7 @@ function App() {
 			    	<Typist.Delay ms={500} />
 				        <br />
 			          	<Typography variant="h5" color={theme.palette.secondary.main} >
-						Fullstack JavaScript Developer
+						Software Developer
 					</Typography>
 					<Typography variant="caption" color={theme.palette.secondary.main} >
 						"Today I choose to be better than I was yesterday"  <br />
@@ -270,6 +270,7 @@ function App() {
 							<ul>
 								<li> Html & CSS</li>
 								<li> ReactJS</li>
+                                                                <li> TypeScript</li>
 								<li> Bootstrap</li>
 								<li> Google Material UI</li>
 								<li> JQuery</li>
