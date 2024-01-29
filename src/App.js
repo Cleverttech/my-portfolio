@@ -274,6 +274,8 @@ function App() {
 								<li> Bootstrap</li>
 								<li> Google Material UI</li>
 								<li> JQuery</li>
+						                <li> Automated testing</li>
+						                <li> Kotlin (Android Dev) </li>
 							</ul>
 						</Grid>
 						<Grid item xs={12} lg={6} md={6}>
@@ -434,9 +436,7 @@ function App() {
 					<Link href="mailto:clevertedeku@gmail.com" target="_blank" rel="noreferrer">
 						<img className={classes.contactIcons} src="../assets/gmail.png" alt="gmail" loading="lazy"></img>
 					</Link>
-					<Link href="https://www.instagram.com/clever_ttech/ " target="_blank" rel="noreferrer">
-						<img className={classes.contactIcons} src="../assets/instagram.png" alt="instagram" loading="lazy"></img>
-					</Link>
+		
 					<Link href="https://twitter.com/TedekuClever" target="_blank" rel="noreferrer">
 						<img className={classes.contactIcons} src="../assets/twitter.png" alt="twitter" loading="lazy"></img>
 					</Link>
