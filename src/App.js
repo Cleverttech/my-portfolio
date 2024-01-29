@@ -239,7 +239,7 @@ function App() {
 					</div>
 					<Typist>
 					<Typography variant="h5" className={classes.heading} color={theme.palette.secondary.main}>
-						My name is Clever Tedeku
+						My name is Clever D. Derenbach
 					</Typography>
 			    	<Typist.Delay ms={500} />
 				        <br />
