@@ -288,7 +288,7 @@ function App() {
 							</ul>
 						</Grid>
 					</Grid>
-					I am proficient in the usage of JS libraries and welcome new daily challenges in programming. I am still learning and open to acquiring new
+					I am proficient in the usage of JS libraries and automated testing tools and welcome new daily challenges in programming. I am still learning and open to acquiring new
 					skills. I am a quick learner, team-oriented and quickly adapt to fast-paced working environments. My work experience have been in both personal
 					projects and under the umbrella of a publishing firm where I got the opportunity to work with an amazing team in executing a (
 					<Link className={classes.highlight} href="https://weihnachten.aerzteverlag.de" target="_blank">
