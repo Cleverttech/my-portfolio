@@ -328,7 +328,7 @@ function App() {
 									<Typography variant="body2" color="textSecondary" paragraph>
 										ReactJS, Google Material UI, NodeJS, ExpressJS, Socket.io, CSS, HTML
 									</Typography>
-									<Link href="https://cleverttech.github.io/topoli-arts/">
+									<Link href="https://github.com/Cleverttech/topoliArtsClient">
 										<Button variant="contained" color="secondary">
 											Checkout TopoliArts here
 										</Button>
@@ -365,7 +365,7 @@ function App() {
 									<Typography variant="body2" color="textSecondary" paragraph>
 										Handlebars, Bootstrap, NodeJS, ExpressJS, CSS, HTML
 									</Typography>
-									<Link href="https://github.com/Cleverttech/clever-move-project/"
+									<Link href=""
 										<Button variant="contained" color="secondary">
 											Checkout Clever-Move here
 										</Button>
