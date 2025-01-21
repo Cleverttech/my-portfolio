@@ -265,41 +265,34 @@ function App() {
 				</p>
 				<p style={skillText}>
 					My range of expertise are in the stack:
-					<Grid container spacing={3}>
-						<Grid item xs={12} lg={6} md={6}>
-							<ul>
-								<li> Html & CSS</li>
-								<li> ReactJS</li>
-                                                                <li> TypeScript</li>
-								<li> Bootstrap</li>
-								<li> Google Material UI</li>
-								<li> JQuery</li>
-						                <li> Automated testing</li>
-						                <li> Kotlin (Android Dev) </li>
-							</ul>
-						</Grid>
-						<Grid item xs={12} lg={6} md={6}>
-							<ul>
-								<li>NodeJS</li>
-								<li>ExpressJS</li>
-								<li> APIs</li>
-								<li>MongoDB</li>
-								<li>Mongoose</li>
-							</ul>
-						</Grid>
-					</Grid>
-					I am proficient in the usage of JS libraries and automated testing tools and welcome new daily challenges in programming. I am still learning and open to acquiring new
-					skills. I am a quick learner, team-oriented and quickly adapt to fast-paced working environments. My work experience have been in both personal
-					projects and under the umbrella of a publishing firm where I got the opportunity to work with an amazing team in executing a (
-					<Link className={classes.highlight} href="https://weihnachten.aerzteverlag.de" target="_blank">
-						{" "}
-						Christmas wishes page@Aertzeverlag
-					</Link>
-					) which I independently coded from scratch plus templating/Typo3 dynamic programming for the relaunch of an existing company client's Website{" "}
-					<Link className={classes.highlight} href="https://www.operation-karriere.de/kongresse/die-kongressreihe.html" target="_blank">
-						Entire "Kongresse" menu content
-					</Link>
 					
+				<Grid container spacing={3}>
+					  <Grid item xs={12} lg={6} md={6}>
+					    <ul>
+					      <li>HTML & CSS (still rocking the basics like a boss 💅)</li>
+					      <li>React (because component-based UI is my jam 🎨)</li>
+					      <li>TypeScript (bringing type safety and sanity to my JavaScript life 🤓)</li>
+					      <li>Appium (testing Android apps like a mobile ninja 📱🤺)</li>
+					      <li>Playwright (end-to-end testing with style and speed 🚀)</li>
+					      <li>MySQL & MariaDB (keeping data relationships healthier than ever ❤️)</li>
+					      <li>Jenkins (CI/CD pipelines? Built and deployed like a pro 🤖)</li>
+					    </ul>
+					  </Grid>
+					  <Grid item xs={12} lg={6} md={6}>
+					    <ul>
+					      <li>Docker (containerizing everything like it's Tupperware for tech 🐳)</li>
+					      <li>Fundamentals of AWS (dabbling in the cloud, one service at a time ☁️)</li>
+					      <li>Fundamentals of Java (because classic never goes out of style ☕)</li>
+					      <li>Python (data, AI, scripts—you name it, I code it 🐍)</li>
+					      <li>REST & GraphQL APIs (connecting apps like a digital matchmaker 💻❤️)</li>
+					    </ul>
+					  </Grid>
+					
+					  <p>
+					    I’m a versatile developer who codes with flair and purpose. Oh, and did I mention my love for automated testing with Appium and Playwright?  
+					    I’m here to keep things efficient, adaptable, and just a little bit fabulous. Let’s make magic happen! 💪✨
+					  </p>
+					</Grid>				
 				</p>
 			</Grid>
 			<Grid style={projectsSection} id="projects">
