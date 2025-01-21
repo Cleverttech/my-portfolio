@@ -241,7 +241,7 @@ function App() {
 					<Typography variant="h5" className={classes.heading} color={theme.palette.secondary.main}>
 						My name is Clever D. Derenbach
 					</Typography>
-			    	<Typist.Delay ms={500} />
+			    	
 				        <br />
 			          	<Typography variant="h5" color={theme.palette.secondary.main} >
 						Software Developer
@@ -250,7 +250,7 @@ function App() {
 						"Today I choose to be better than I was yesterday"  <br />
 						 _my daily motivation
 				       </Typography>
-				  </Typist>
+				  
 				</Grid>
 			</Grid>
 		
