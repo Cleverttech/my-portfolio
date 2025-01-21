@@ -335,7 +335,7 @@ function App() {
 									<Typography variant="body2" color="textSecondary" paragraph>
 										ReactJS, Google Material UI, NodeJS, ExpressJS, Socket.io, CSS, HTML
 									</Typography>
-									<Link href="https://topoli-arts.herokuapp.com/">
+									<Link href="https://cleverttech.github.io/topoli-arts/">
 										<Button variant="contained" color="secondary">
 											Checkout TopoliArts here
 										</Button>
