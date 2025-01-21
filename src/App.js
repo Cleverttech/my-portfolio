@@ -372,7 +372,7 @@ function App() {
 									<Typography variant="body2" color="textSecondary" paragraph>
 										Handlebars, Bootstrap, NodeJS, ExpressJS, CSS, HTML
 									</Typography>
-									<Link href="https://clevermove.herokuapp.com/">
+									<Link href="https://github.com/Cleverttech/clever-move-project/"
 										<Button variant="contained" color="secondary">
 											Checkout Clever-Move here
 										</Button>
