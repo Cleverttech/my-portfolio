@@ -409,7 +409,7 @@ function App() {
 									<Typography variant="body2" color="textSecondary" paragraph>
 										JavaScript, DOM manipulation, CSS3, HTML5 Canvas
 									</Typography>
-									<Link href=" https://cleverttech.github.io/Dragon-slay/" target="_blank">
+									<Link href="https://cleverttech.github.io/Dragon-slay/" target="_blank">
 										<Button variant="contained" color="secondary">
 											Checkout Dragon-Slay here
 										</Button>
