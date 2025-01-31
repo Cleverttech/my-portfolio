@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Paper, Card, CardHeader, Avatar, CardMedia, CardContent, Typography, Button, Link } from '@mui/material';
+import { Grid, Card, CardHeader, Avatar, CardMedia, CardContent, Typography, Button, Link } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
@@ -12,13 +12,25 @@ const theme = createTheme({
       main: '#ac7937',
     },
   },
-  spacing: 8,
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600, 
+      md: 800,
+      lg: 1280,
+      xl: 1600,
+    },
+  },
+ // spacing: 8,
 });
 
 const useStyles = (theme) => ({
-  root: {
-    maxWidth: 500,
+  projectCards: {
+    display: 'flex',
+    justifyContent: 'center',
+    maxWidth: 400,
     margin: 'auto',
+    padding: theme.spacing(2),
   },
   avatar: {
     width: theme.spacing(2),
@@ -30,20 +42,24 @@ const useStyles = (theme) => ({
     objectFit: 'contain',
   },
   media: {
-    width: 250,
-    height: 200,
+    height: 233, 
+    width: "auto", 
+    objectFit: "contain", 
+    margin: theme.spacing(2),
   },
   seeMore: {
-    color: '#ac7937',
+    color: theme.palette.secondary.main,
     marginTop: theme.spacing(1),
   },
-  projectCards: {
-    display: 'flex',
-    justifyContent: 'center',
-    padding: theme.spacing(2),
-  },
+
   projectStyles: {
     margin: "0px 20px",
+    display:"flex",
+    flexFlow: "wrap"
+  },
+  cardStyles: {
+     maxWidth: 345,
+    boxShadow: 20
   }
 
 })
@@ -53,9 +69,9 @@ const ProjectCards = () => {
   return (
     <ThemeProvider theme={theme}>
       <Grid container spacing={2} justifyContent="center">
-        <Grid item xs={12} md={6} lg={4} sx={classes.projectStyles}>
-          <Paper elevation={20}>
-            <Card sx={classes.root}>
+        <Grid item xs={12} sm={12} md={4} lg={3} xl={3} sx={classes.projectStyles}>
+
+          <Card sx={classes.cardStyles}>
               <CardHeader
                 avatar={
                   <Avatar
@@ -93,12 +109,12 @@ const ProjectCards = () => {
                 </Link>
               </CardContent>
             </Card>
-          </Paper>
+   
         </Grid>
 
-        <Grid item xs={12} md={6} lg={4} sx={classes.projectStyles}>
-          <Paper elevation={20}>
-            <Card sx={classes.root}>
+        <Grid item xs={12} sm={12} md={4} lg={3} xl={3} sx={classes.projectStyles}>
+
+          <Card sx={classes.cardStyles}>
               <CardHeader
                 avatar={
                   <Avatar
@@ -134,12 +150,12 @@ const ProjectCards = () => {
                 </Link>
               </CardContent>
             </Card>
-          </Paper>
+    
         </Grid>
 
-        <Grid item xs={12} md={6} lg={4} sx={classes.projectStyles}>
-          <Paper elevation={20}>
-            <Card sx={classes.root}>
+        <Grid item xs={12} sm={12} md={4} lg={3} xl={3} sx={classes.projectStyles}>
+        
+          <Card sx={classes.cardStyles}>
               <CardHeader
                 avatar={
                   <Avatar
@@ -174,7 +190,7 @@ const ProjectCards = () => {
                 </Link>
               </CardContent>
             </Card>
-          </Paper>
+     
         </Grid>
       </Grid>
     </ThemeProvider>
