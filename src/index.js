@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { createMuiTheme ,ThemeProvider} from '@material-ui/core/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: "#252a2d",
@@ -12,34 +12,34 @@ const theme = createMuiTheme({
     secondary: {
       main: '#ac7937',
     },
-    action:{
-     hover: "rgba(172,121,55,0.3)"
-   }
-   
+    action: {
+      hover: "rgba(172,121,55,0.3)",
+    },
   },
-  typography:{
+  typography: {
     fontFamily: [
       'Nunito',
       'Roboto',
       '"Helvetica Neue"',
       'Arial',
-      'sans-serif'
+      'sans-serif',
     ].join(','),
-    h6:{
-      fontWeight: "100"
-    }
-  }
-  
+    h6: {
+      fontWeight: "100",
+    },
+  },
 });
 
 ReactDOM.render(
   <React.StrictMode>
-  <ThemeProvider theme={theme}>
-     <App />
-  </ThemeProvider>
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+
 
 
 

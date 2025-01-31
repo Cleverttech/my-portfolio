@@ -1,450 +1,198 @@
-import "./App.css";
-import {
-	Link,
-	AppBar,
-	Toolbar,
-	IconButton,
-	Typography,
-	MenuItem,
-	Menu,
-	Avatar,
-	Grid,
-	Paper,
-	Card,
-	CardHeader,
-	CardContent,
-	CardMedia,
-	Button,
-} from "@material-ui/core";
-import Typist from 'react-typist';
-import { useTheme, makeStyles } from "@material-ui/core/styles";
+import "./App.css"; 
+import { Link, AppBar, Toolbar, IconButton, Typography, MenuItem, Menu, Avatar, Grid } from "@mui/material";
+import { Typewriter } from "react-simple-typewriter";
+import { useTheme } from "@mui/material/styles";
 import React, { useState } from "react";
-import MenuIcon from "@material-ui/icons/Menu";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-const useStyles = makeStyles((theme) => ({
-	root: {
-		maxWidth: 345,
-	},
-        link:{
-	   color:"white",
-	   textDecoration:"none",
-        },
-           linkMobile:{
-	   color:"#252a2d",
-	   textDecoration:"none",
-        },
-	grow: {
-		flexGrow: 1,
-	},
-	menuButton: {
-		marginRight: theme.spacing(2),
-	},
-	title: {
-		[theme.breakpoints.up("sm")]: {
-			display: "block",
-		},
-		textDecoration: "none",
-		color: "inherit",
-		paddingLeft: "40px",
-		fontWeight: "light",
-	},
-	sectionDesktop: {
-		display: "none",
-		[theme.breakpoints.up("md")]: {
-			display: "flex",
-		},
-	},
-	sectionMobile: {
-		display: "flex",
-		[theme.breakpoints.up("md")]: {
-			display: "none",
-		},
-	},
-	heading: {
-		paddingTop: "50px",
-		color: theme.palette.secondary.main,
-		fontWeight: 400,
-	},
-	media: {
-		height: 0,
-		margin: "0px 30px",
-		paddingTop: "67.25%", // 16:9
-	},
-	avatar: {
-		backgroundColor: "white",
-	},
-	large: {
-		width: "70%",
-		height: "auto",
-		margin: "auto",
-	},
-	avatarImg: {
-		width: "100%",
-	},
-	projectCards: {
-		display: "flex",
-		justifyContent: "center",
-		margin: "40px auto",
+import MenuIcon from "@mui/icons-material/Menu";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import ProjectCards from "./ProjectCards"
 
-		height: "auto",
-	},
-	contactIcons: {
-		width: "2.6em",
-		margin: "20px",
-	},
-	seeMore: {
-		margin: "auto",
-		marginTop: "20px",
-	},
-	highlight: {
-		color: "#009dff",
-	},
-}));
+const App = () => {
+  const theme = useTheme();
+  const [mobileMoreClick, setMobileMoreClick] = useState(null);
+  const isMobileMenuOpen = Boolean(mobileMoreClick);
 
-function App() {
-	const theme = useTheme();
-	const classes = useStyles();
+  const handleMobileMenuClose = () => {
+    setMobileMoreClick(null);
+  };
 
-	const [mobileMoreClick, setMobileMoreClick] = useState(null);
+  const handleMobileMenuOpen = (event) => {
+    setMobileMoreClick(event.currentTarget);
+  };
 
-	const isMobileMenuOpen = Boolean(mobileMoreClick);
+  const mobileMenuId = "primary-search-account-menu-mobile";
+  const renderMobileMenu = (
+    <Menu
+      anchorEl={mobileMoreClick}
+      anchorOrigin={{ horizontal: "right", vertical: "top" }}
+      id={mobileMenuId}
+      keepMounted
+      transformOrigin={{ horizontal: "right", vertical: "top" }}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}
+    >
+      <MenuItem onClick={handleMobileMenuClose}>
+        <a href="#skills" style={{ color: "#252a2d", textDecoration: "none" }}>Skills</a>
+      </MenuItem>
+      <MenuItem onClick={handleMobileMenuClose}>
+        <a href="#projects" style={{ color: "#252a2d", textDecoration: "none" }}>Projects</a>
+      </MenuItem>
+      <MenuItem onClick={handleMobileMenuClose}>
+        <a href="#contact" style={{ color: "#252a2d", textDecoration: "none" }}>Contact</a>
+      </MenuItem>
+    </Menu>
+  );
 
-	const handleMobileMenuClose = () => {
-		setMobileMoreClick(null);
-	};
 
-	const handleMobileMenuOpen = (event) => {
-		setMobileMoreClick(event.currentTarget);
-	};
+  const heroSection = {
+    backgroundColor: "white",
+    minHeight: "100vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  };
 
-	const mobileMenuId = "primary-search-account-menu-mobile";
-	const renderMobileMenu = (
-		<Menu
-			anchorEl={mobileMoreClick}
-			anchorOrigin={{ horizontal: "right", vertical: "top" }}
-			id={mobileMenuId}
-			keepMounted
-			transformOrigin={{ horizontal: "right", vertical: "top" }}
-			open={isMobileMenuOpen}
-			onClose={handleMobileMenuClose}
-		>
-			<MenuItem onClick={handleMobileMenuClose}>
-				<a className={classes.linkMobile} href="#skills">
-					Skills
-				</a>
-			</MenuItem>
-			<MenuItem onClick={handleMobileMenuClose}>
-				<a className={classes.linkMobile} href="#projects">
-					Projects
-				</a>
-			</MenuItem>
-			<MenuItem onClick={handleMobileMenuClose}>
-				<a className={classes.linkMobile} href="#contact">
-					Contact
-				</a>
-			</MenuItem>
-		</Menu>
-	);
+  const skillsSection = {
+    backgroundColor: theme.palette.primary.main,
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    paddingBottom: "70px",
+  };
 
-	const heroSection = {
-		backgroundColor: "white",
-		minHeight: "100vh",
-		display: "flex",
-		alignItems: "center",
-		justifyContent: "center",
-	};
+  const skillText = {
+    color: "white",
+    width: "85%",
+    margin: "auto",
+    fontSize: "1.2em",
+    lineHeight: "2",
+    fontWeight: 200,
+  };
 
-	const skillsSection = {
-		backgroundColor: theme.palette.primary.main,
-		minHeight: "100vh",
-		display: "flex",
-		flexDirection: "column",
-		alignItems: "center",
-		paddingBottom:"70px",
-	};
-	const skillText = {
-		color: "white",
-		width: "85%",
-		margin:"auto",
-		fontSize: "1.2em",
-		lineHeight: "2",
-		fontWeight: 200,
-	};
-	const projectsSection = {
-		backgroundColor: "white",
-		minHeight: "100vh",
-		width: "100vw",
-		margin: "auto",
-		paddingBottom:"70px",
-	};
-	const projectStyles = {
-		margin: "0px 20px",
-		flexWrap: "wrap",
-		flexDirection: "row",
-		display: "flex",
-	};
-	const contactSection = {
-		backgroundColor: theme.palette.primary.main,
-		minHeight: "30vh",
-	
-	};
-	
-	return (
-		<div className="App">
-			<Grid>
-				<div className={classes.grow}>
-					<AppBar position="static">
-						<Toolbar>
-							<Typography className={classes.title} variant="h6">
+  const projectsSection = {
+    backgroundColor: "white",
+    minHeight: "100vh",
+    width: "100vw",
+    margin: "auto",
+    paddingBottom: "70px",
+  };
 
-									<img style={{ width: "38px", position: "absolute", top: "16px", left: "15px" }} src="../assets/Logo_Master_hell.png" alt="logo" />
-									Cleverttech
-					
-							</Typography>
 
-							<div className={classes.grow} />
-							<div className={classes.sectionDesktop}>
-					
-								<MenuItem>
-									<Link className={classes.link} href="#skills">
-										Skills
-									</Link>
-								</MenuItem>
-								<MenuItem>
-									<Link className={classes.link} href="#projects">
-										Projects
-									</Link>
-								</MenuItem>
-								<MenuItem>
-									<Link className={classes.link} href="#contact">
-										Contact
-									</Link>
-								</MenuItem>
-							</div>
+  const contactSection = {
+    backgroundColor: theme.palette.primary.main,
+    minHeight: "30vh",
+  };
 
-							<div className={classes.sectionMobile}>
-								<IconButton aria-label="show more" aria-controls={mobileMenuId} aria-haspopup="true" onClick={handleMobileMenuOpen} color="inherit">
-									<MenuIcon />
-								</IconButton>
-							</div>
-						</Toolbar>
-					</AppBar>
-					{renderMobileMenu}
-				</div>
-			</Grid>
-			<Grid style={heroSection} id="about">
-				<Grid >
-					<div className={classes.root}>
-						<Avatar alt="clever Img" src="../assets/clever.png" className={classes.large} />
-					</div>
-					<Typist>
-					<Typography variant="h5" className={classes.heading} color={theme.palette.secondary.main}>
-						My name is Clever D. Derenbach
-					</Typography>
-			    	
-				        <br />
-			          	<Typography variant="h5" color={theme.palette.secondary.main} >
-						Software Developer
-					</Typography>
-					<Typography variant="caption" color={theme.palette.secondary.main} >
-						"Today I choose to be better than I was yesterday"  <br />
-						 _my daily motivation
-				       </Typography>
-				  
-				</Grid>
-			</Grid>
-		
-			<Grid style={skillsSection} id="skills">
-				<h1 className={classes.heading} color={theme.palette.secondary.main}>
-					About me and my skills
-				</h1>
-				<p style={skillText}>
-                    My name is Clever and yes that's my real name :). I am usually considered by most people to be personable, sympathetic,
-					eager to learn and work really well with people from diverse cultures and backgrounds.
-					 The fun facts about me are, I love to cook and listen to trap music.
-				</p>
-				<p style={skillText}>
-					My range of expertise are in the stack:
-					
-				<Grid container spacing={3}>
-					  <Grid item xs={12} lg={6} md={6}>
-					    <ul>
-					      <li>HTML & CSS (still rocking the basics like a boss 💅)</li>
-					      <li>React (because component-based UI is my jam 🎨)</li>
-					      <li>TypeScript (bringing type safety and sanity to my JavaScript life 🤓)</li>
-					      <li>Appium (testing Android apps like a mobile ninja 📱🤺)</li>
-					      <li>Playwright (end-to-end testing with style and speed 🚀)</li>
-					      <li>MySQL & MariaDB (keeping data relationships healthier than ever ❤️)</li>
-					      <li>Jenkins (CI/CD pipelines? Built and deployed like a pro 🤖)</li>
-					    </ul>
-					  </Grid>
-					  <Grid item xs={12} lg={6} md={6}>
-					    <ul>
-					      <li>Docker (containerizing everything like it's Tupperware for tech 🐳)</li>
-					      <li>Fundamentals of AWS (dabbling in the cloud, one service at a time ☁️)</li>
-					      <li>Fundamentals of Java (because classic never goes out of style ☕)</li>
-					      <li>Python (data, AI, scripts—you name it, I code it 🐍)</li>
-					      <li>REST & GraphQL APIs (connecting apps like a digital matchmaker 💻❤️)</li>
-					    </ul>
-					  </Grid>
-					
-					  <p>
-					    I’m a versatile developer who codes with flair and purpose. Oh, and did I mention my love for automated testing with Appium and Playwright?  
-					    I’m here to keep things efficient, adaptable, and just a little bit fabulous. Let’s make magic happen! 💪✨
-					  </p>
-					</Grid>				
-				</p>
-			</Grid>
-			<Grid style={projectsSection} id="projects">
-				<h1 className={classes.heading} color={theme.palette.secondary.main}>
-					Projects
-				</h1>
-				<div style={projectStyles}>
-					<Grid className={classes.projectCards}>
-						<Paper elevation={20}>
-							<Card className={classes.root}>
-								<CardHeader
-									avatar={
-										<Avatar aria-label="topoli" className={classes.avatar}>
-											<img className={classes.avatarImg} src="../assets/topoli-logo.png" alt="topoliarts" loading="lazy"></img>
-										</Avatar>
-									}
-									title="Topoli Arts"
-									subheader="Delivered on: May 21, 2021"
-								/>
-								<CardMedia className={classes.media} image="../assets/topoli-frame.png" title="topoli arts" />
-								<CardContent>
-									<Typography variant="body2" color="textSecondary" component="p">
-										This is a web application with some content management features where professional artists as mentors get to offer mentorships courses,
-										interact with students and also where students get to interact with each other.{" "}
-									</Typography>
-								</CardContent>
+  return (
+    <div className="App">
+      <Grid>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h6" style={{ flexGrow: 1, paddingLeft: "40px", fontWeight: "light" }}>
+              <img style={{ width: "38px", position: "absolute", top: "16px", left: "15px" }} src="../assets/Logo_Master_hell.png" alt="logo" />
+              Cleverttech
+            </Typography>
+            <div style={{ flexGrow: 1 }} />
+            <div style={{ display: "none", [theme.breakpoints.up("md")]: { display: "flex" } }}>
+              <MenuItem>
+                <Link href="#skills" style={{ color: "white", textDecoration: "none" }}>Skills</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link href="#projects" style={{ color: "white", textDecoration: "none" }}>Projects</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link href="#contact" style={{ color: "white", textDecoration: "none" }}>Contact</Link>
+              </MenuItem>
+            </div>
+            <div style={{ display: "flex", [theme.breakpoints.up("md")]: { display: "none" } }}>
+              <IconButton onClick={handleMobileMenuOpen} color="inherit">
+                <MenuIcon />
+              </IconButton>
+            </div>
+          </Toolbar>
+        </AppBar>
+        {renderMobileMenu}
+      </Grid>
 
-								<Typography variant="body2" color="secondary" component="p" className={classes.seeMore}>
-									Technologies used:
-								</Typography>
+      <Grid style={heroSection} id="about">
+        <div>
+          <Avatar alt="clever Img" src="../assets/clever.png" style={{ width: "30%", height: "auto", margin: "auto", color:"black"}} />
+          <Typography variant="h5" style={{ paddingTop: "50px", color: theme.palette.secondary.main, fontWeight: 400 }}>
+            My name is Clever D. Derenbach
+          </Typography>
+          <Typography variant="h5" color={theme.palette.secondary.main}>
+            Software Developer
+          </Typography>
+          <Typography variant="caption" color={theme.palette.secondary.main}>
+            <Typewriter
+              words={["Today I choose to be better than I was yesterday", "_my daily motivation", "React Enthusiast"]}
+              loop={5}
+              cursor
+              cursorStyle="_"
+              typeSpeed={100}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
+          </Typography>
+        </div>
+      </Grid>
 
-								<CardContent>
-									<Typography variant="body2" color="textSecondary" paragraph>
-										ReactJS, Google Material UI, NodeJS, ExpressJS, Socket.io, CSS, HTML
-									</Typography>
-									<Link href="https://github.com/Cleverttech/topoliArtsClient">
-										<Button variant="contained" color="secondary">
-											Checkout TopoliArts here
-										</Button>
-									</Link>
-								</CardContent>
-							</Card>
-						</Paper>
-					</Grid>
-					<Grid className={classes.projectCards}>
-						<Paper elevation={20}>
-							<Card className={classes.root}>
-								<CardHeader
-									avatar={
-										<Avatar aria-label="full-stack app" className={classes.avatar}>
-											<img className={classes.avatarImg} src="../assets/logo.png" alt="logo"></img>
-										</Avatar>
-									}
-									title="Clever Move"
-									subheader="Delivered on: April 30, 2021"
-								/>
-								<CardMedia className={classes.media} image="../assets/clevermove-frame.png" title="Clever move" />
-								<CardContent>
-									<Typography variant="body2" color="textSecondary" component="p">
-										This is a web application of a Moving company with the functionalities of customers to be able to book their moving schedules for the admin
-										user to have an overview of all booked schedules and be able to accept or decline.
-									</Typography>
-								</CardContent>
+      <Grid style={skillsSection} id="skills">
+        <h1 style={{ color: theme.palette.secondary.main, fontWeight: 400 }}>About me and my skills</h1>
+        <p style={skillText}>
+          My name is Clever and yes that's my real name :). I am usually considered by most people to be personable, sympathetic,
+          eager to learn and work really well with people from diverse cultures and backgrounds.
+          The fun facts about me are, I love to cook and listen to trap music.
+        </p>
+        <p style={skillText}>
+          My range of expertise are in the stack:
+          <Grid container spacing={3}>
+            <Grid item xs={12} lg={6} md={6}>
+              <ul>
+                <li>HTML & CSS (still rocking the basics like a boss 💅)</li>
+                <li>React (because component-based UI is my jam 🎨)</li>
+                <li>TypeScript (bringing type safety and sanity to my JavaScript life 🤓)</li>
+                <li>Appium (testing Android apps like a mobile ninja 📱🤺)</li>
+                <li>Playwright (end-to-end testing with style and speed 🚀)</li>
+                <li>MySQL & MariaDB (keeping data relationships healthier than ever ❤️)</li>
+                <li>Jenkins (CI/CD pipelines? Built and deployed like a pro 🤖)</li>
+              </ul>
+            </Grid>
+            <Grid item xs={12} lg={6} md={6}>
+              <ul>
+                <li>Docker (containerizing everything like it's Tupperware for tech 🐳)</li>
+                <li>Fundamentals of AWS (dabbling in the cloud, one service at a time ☁️)</li>
+                <li>Fundamentals of Java (because classic never goes out of style ☕)</li>
+                <li>Python (data, AI, scripts—you name it, I code it 🐍)</li>
+                <li>REST & GraphQL APIs (connecting apps like a digital matchmaker 💻❤️)</li>
+              </ul>
+            </Grid>
+          </Grid>
+          <p>
+            I’m a versatile developer who codes with flair and purpose. Oh, and did I mention my love for automated testing with Appium and Playwright?
+            I’m here to keep things efficient, adaptable, and just a little bit fabulous. Let’s make magic happen! 💪✨
+          </p>
+        </p>
+      </Grid>
 
-								<Typography variant="body2" color="secondary" component="p" className={classes.seeMore}>
-									Technologies used:
-								</Typography>
+      <Grid style={projectsSection} id="projects">
+        <h1 style={{ color: theme.palette.secondary.main, fontWeight: 400 }}>Projects</h1>
+      <ProjectCards />
+     </Grid>
 
-								<CardContent>
-									<Typography variant="body2" color="textSecondary" paragraph>
-										Handlebars, Bootstrap, NodeJS, ExpressJS, CSS, HTML
-									</Typography>
-									<Link href=""
-										<Button variant="contained" color="secondary">
-											Checkout Clever-Move here
-										</Button>
-									</Link>
-								</CardContent>
-							</Card>
-						</Paper>
-					</Grid>
-					<Grid className={classes.projectCards}>
-						<Paper elevation={20}>
-							<Card className={classes.root}>
-								<CardHeader
-									avatar={
-										<Avatar aria-label="game" className={classes.avatar}>
-											<img className={classes.avatarImg} src="../assets/mother2.png" alt="game" loading="lazy"></img>
-										</Avatar>
-									}
-									title="Dragon Slay"
-									subheader="Delivered on: April 9, 2021"
-								/>
-								<CardMedia className={classes.media} image="../assets/dragonslay-frame.png" title="Dragon slay" />
-								<CardContent>
-									<Typography variant="body2" color="textSecondary" component="p">
-										A very addictive game with increasing difficulty.Dragon slay is about a Mother Dragon trying to avoid Obstacles in her way to save her baby
-										dragon who appears only after a minimum score of 5. (Use keyboard keys only)
-									</Typography>
-								</CardContent>
-
-								<Typography variant="body2" color="secondary" component="p" className={classes.seeMore}>
-									Technologies used:
-								</Typography>
-
-								<CardContent>
-									<Typography variant="body2" color="textSecondary" paragraph>
-										JavaScript, DOM manipulation, CSS3, HTML5 Canvas
-									</Typography>
-									<Link href="https://cleverttech.github.io/Dragon-slay/" target="_blank">
-										<Button variant="contained" color="secondary">
-											Checkout Dragon-Slay here
-										</Button>
-									</Link>
-								</CardContent>
-							</Card>
-						</Paper>
-					</Grid>
-				</div>
-			</Grid>
-			<Grid style={contactSection} id="contact">
-				<h1 className={classes.heading} color={theme.palette.secondary.main}>
-					Contact me here
-				</h1>
-				<Grid>
-				
-
-					<Link href="https://www.linkedin.com/in/clever-tedeku-84505a127/?senderId=clever-tedeku-84505a127 " target="_blank" rel="noreferrer">
-						<img className={classes.contactIcons} src="../assets/linkedin.png" alt="linkedin" loading="lazy"></img>
-					</Link>
-					<Link href="https://github.com/Cleverttech" target="_blank" rel="noreferrer">
-						<img className={classes.contactIcons} src="../assets/github.jpg" alt="github" loading="lazy"></img>
-					</Link>
-					<Link href="mailto:clevertedeku@gmail.com" target="_blank" rel="noreferrer">
-						<img className={classes.contactIcons} src="../assets/gmail.png" alt="gmail" loading="lazy"></img>
-					</Link>
-		
-					<Link href="https://twitter.com/TedekuClever" target="_blank" rel="noreferrer">
-						<img className={classes.contactIcons} src="../assets/twitter.png" alt="twitter" loading="lazy"></img>
-					</Link>
-				</Grid>
-				<small style={{ color: "#ac7937", marginTop: "20px" }}>
-					Made with{" "}
-					<span>
-						<FavoriteIcon style={{ fontSize: "13px" }} />
-					</span>{" "}
-					by Clever
-				</small>
-			</Grid>
-		</div>
-	 )
-}
-
+      <Grid style={contactSection} id="contact">
+        <h1 style={{ color: theme.palette.secondary.main, fontWeight: 400 }}>Contact me here</h1>
+        <Grid>
+          {/* Contact Icons */}
+        </Grid>
+        <small style={{ color: "#ac7937", marginTop: "20px" }}>
+          Made with <FavoriteIcon style={{ fontSize: "13px" }} /> by Clever
+        </small>
+      </Grid>
+    </div>
+  );
+};
 
 export default App;
+
