@@ -64,7 +64,8 @@ const App = () => {
       py: 2,
     },
     textColor: {
-      color: "white"
+      color: "white",
+      display: 'flex', flexDirection: 'column', alignItems: 'center'
     },
     linkStyle: {
       color: "white", textDecoration: "none"
@@ -74,7 +75,7 @@ const App = () => {
     titleStyle: { flexGrow: 1, paddingLeft: "40px", fontWeight: "light" },
     typoStyle: { color: theme.palette.secondary.main, fontWeight: 400 }
     , menuLinkStyle: { color: "#252a2d", textDecoration: "none" }, 
-    listStyle: { display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 0 }
+    listStyle: { display: 'flex', flexDirection: 'column', alignItems: 'center' }
   })
   const classes = useStyles(theme);
 
